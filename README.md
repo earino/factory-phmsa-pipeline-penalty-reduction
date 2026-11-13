@@ -15,6 +15,14 @@ configs:
     path: extract/private/holdout.csv
 ---
 
+<!-- dataset-factory:links -->
+**Dataset Factory · v-bbc08f68dbbd24b5**
+
+[Dataset website](https://earino.github.io/factory-phmsa-pipeline-penalty-reduction/versions/v-bbc08f68dbbd24b5/) · [GitHub release](https://github.com/earino/factory-phmsa-pipeline-penalty-reduction/releases/tag/v-bbc08f68dbbd24b5) · [Hugging Face](https://huggingface.co/datasets/earino/factory-phmsa-pipeline-penalty-reduction/tree/v-bbc08f68dbbd24b5) · [Catalogue](https://earino.github.io/dataset-factory-site/)
+
+Artifact: 04b70fa61c8b4b68fb11974080984ef075ff8470c5ee52379579266b5ccfac1a
+<!-- /dataset-factory:links -->
+
 # Will PHMSA's proposed pipeline-safety civil penalty be reduced or eliminated within 36 months?
 
 Will a PHMSA Notice of Probable Violation with a proposed civil penalty be closed within 36 months with a lower assessed penalty than proposed?

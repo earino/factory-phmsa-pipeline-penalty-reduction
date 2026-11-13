@@ -1,0 +1,314 @@
+{
+  "artifact_version": "04b70fa61c8b4b68fb11974080984ef075ff8470c5ee52379579266b5ccfac1a",
+  "assets": {
+    "LICENSE-EVIDENCE.json": {
+      "bytes": 651,
+      "download": "https://github.com/earino/factory-phmsa-pipeline-penalty-reduction/releases/download/v-bbc08f68dbbd24b5/LICENSE-EVIDENCE.json",
+      "hf_path": "LICENSE-EVIDENCE.json",
+      "sha256": "9d2abc5924e3955c2934d70222207498c3a1c7f792b32151503d7eb8ad6b5496"
+    },
+    "LICENSE.md": {
+      "bytes": 948,
+      "download": "https://github.com/earino/factory-phmsa-pipeline-penalty-reduction/releases/download/v-bbc08f68dbbd24b5/LICENSE.md",
+      "hf_path": "LICENSE.md",
+      "sha256": "477fe699db77e1e1b4690879dfd9c51d234ba374847c45db0a5637df093bf23a"
+    },
+    "README.md": {
+      "bytes": 5072,
+      "download": "https://github.com/earino/factory-phmsa-pipeline-penalty-reduction/releases/download/v-bbc08f68dbbd24b5/README.md",
+      "hf_path": "README.md",
+      "sha256": "0da2d2b1e7dc040b57918c790946fdebb141060d550d872b35328aaa28c65ffa"
+    },
+    "SOURCES.json": {
+      "bytes": 997,
+      "download": "https://github.com/earino/factory-phmsa-pipeline-penalty-reduction/releases/download/v-bbc08f68dbbd24b5/SOURCES.json",
+      "hf_path": "SOURCES.json",
+      "sha256": "e0b6bffc8f735726fa257341fa70b577c1963633f1ece9b8d2bcfc0c5cbc07ba"
+    },
+    "evaluation.json": {
+      "bytes": 2280,
+      "download": "https://github.com/earino/factory-phmsa-pipeline-penalty-reduction/releases/download/v-bbc08f68dbbd24b5/evaluation.json",
+      "hf_path": "evaluation.json",
+      "sha256": "b1321867156ee9bc8ffd800db903b5724eca7137113e89cb307fb7dbd785fee5"
+    },
+    "extract__meta.json": {
+      "bytes": 1511,
+      "download": "https://github.com/earino/factory-phmsa-pipeline-penalty-reduction/releases/download/v-bbc08f68dbbd24b5/extract__meta.json",
+      "hf_path": "extract/meta.json",
+      "sha256": "2f925208572551b36fd013a5dafae65bb51da04f014915db22c981a0ec7a4d71"
+    },
+    "extract__private__holdout.csv": {
+      "bytes": 14700,
+      "download": "https://github.com/earino/factory-phmsa-pipeline-penalty-reduction/releases/download/v-bbc08f68dbbd24b5/extract__private__holdout.csv",
+      "hf_path": "extract/private/holdout.csv",
+      "sha256": "8c408e94871aece221d4d1ed6d420ee9d9ab6574c00e71534ba8aaf0aee5ef1e"
+    },
+    "extract__public__eval.csv": {
+      "bytes": 12911,
+      "download": "https://github.com/earino/factory-phmsa-pipeline-penalty-reduction/releases/download/v-bbc08f68dbbd24b5/extract__public__eval.csv",
+      "hf_path": "extract/public/eval.csv",
+      "sha256": "8ee6b14d7148f2a06b622010bbf0b8bb21e647956585764486b803ff055d27dc"
+    },
+    "extract__public__train.csv": {
+      "bytes": 64666,
+      "download": "https://github.com/earino/factory-phmsa-pipeline-penalty-reduction/releases/download/v-bbc08f68dbbd24b5/extract__public__train.csv",
+      "hf_path": "extract/public/train.csv",
+      "sha256": "adaf6e3a33524ffe745a6d6fadd07ca3dedf2a93c8e110f450559cf56c277f74"
+    },
+    "extract__quality.json": {
+      "bytes": 22738,
+      "download": "https://github.com/earino/factory-phmsa-pipeline-penalty-reduction/releases/download/v-bbc08f68dbbd24b5/extract__quality.json",
+      "hf_path": "extract/quality.json",
+      "sha256": "d291f3d5ac04d1d83676c3ed864aaf30299cb9ad69f894f4450a798f2cf5be55"
+    },
+    "get_dataset.py": {
+      "bytes": 3680,
+      "download": "https://github.com/earino/factory-phmsa-pipeline-penalty-reduction/releases/download/v-bbc08f68dbbd24b5/get_dataset.py",
+      "hf_path": "get_dataset.py",
+      "sha256": "fad89222d50f9d9709225c34909be74c591df409c08b8b5951eba9d3cadfdd48"
+    },
+    "qualification.json": {
+      "bytes": 18377,
+      "download": "https://github.com/earino/factory-phmsa-pipeline-penalty-reduction/releases/download/v-bbc08f68dbbd24b5/qualification.json",
+      "hf_path": "qualification.json",
+      "sha256": "1ccb7a62e299c7a2750097d9cd8dcb1a79aab110a660ad33445c1c3171c86f10"
+    },
+    "reproduction__LICENSE-CC0-1.0.txt": {
+      "bytes": 7048,
+      "download": "https://github.com/earino/factory-phmsa-pipeline-penalty-reduction/releases/download/v-bbc08f68dbbd24b5/reproduction__LICENSE-CC0-1.0.txt",
+      "hf_path": "reproduction/LICENSE-CC0-1.0.txt",
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499"
+    },
+    "reproduction__LICENSE-MIT.txt": {
+      "bytes": 1124,
+      "download": "https://github.com/earino/factory-phmsa-pipeline-penalty-reduction/releases/download/v-bbc08f68dbbd24b5/reproduction__LICENSE-MIT.txt",
+      "hf_path": "reproduction/LICENSE-MIT.txt",
+      "sha256": "56b932ff064e5da113ae10175c8546325f64f26e1ece71683ffcbf8b2304fe1c"
+    },
+    "reproduction__artifact_scrub.py": {
+      "bytes": 11369,
+      "download": "https://github.com/earino/factory-phmsa-pipeline-penalty-reduction/releases/download/v-bbc08f68dbbd24b5/reproduction__artifact_scrub.py",
+      "hf_path": "reproduction/artifact_scrub.py",
+      "sha256": "8c663253e691a7b8751f9c853b40a3752a833360caafb1ea8e8f534e64af4b68"
+    },
+    "reproduction__build.py": {
+      "bytes": 24214,
+      "download": "https://github.com/earino/factory-phmsa-pipeline-penalty-reduction/releases/download/v-bbc08f68dbbd24b5/reproduction__build.py",
+      "hf_path": "reproduction/build.py",
+      "sha256": "32b1f0e70cb58713fd3482c9938f8c8bffbf21c17ddd8e64429d05bceb67434b"
+    },
+    "reproduction__construction.json": {
+      "bytes": 24675,
+      "download": "https://github.com/earino/factory-phmsa-pipeline-penalty-reduction/releases/download/v-bbc08f68dbbd24b5/reproduction__construction.json",
+      "hf_path": "reproduction/construction.json",
+      "sha256": "d7b716730c2a8ea9690474ccd6591173c46ca1405e02bd30b087a129f49eed31"
+    },
+    "reproduction__dataset_package.py": {
+      "bytes": 7927,
+      "download": "https://github.com/earino/factory-phmsa-pipeline-penalty-reduction/releases/download/v-bbc08f68dbbd24b5/reproduction__dataset_package.py",
+      "hf_path": "reproduction/dataset_package.py",
+      "sha256": "c2364defe58dcc99322be59a1bb04894ce00e823ce37afeb37bc31012f744327"
+    },
+    "reproduction__dataset_run.py": {
+      "bytes": 12381,
+      "download": "https://github.com/earino/factory-phmsa-pipeline-penalty-reduction/releases/download/v-bbc08f68dbbd24b5/reproduction__dataset_run.py",
+      "hf_path": "reproduction/dataset_run.py",
+      "sha256": "8085fae14d6e93b852e692e18c1ef72113a3601f48f78901b6d1ae6db278de57"
+    },
+    "reproduction__get_dataset.py": {
+      "bytes": 3680,
+      "download": "https://github.com/earino/factory-phmsa-pipeline-penalty-reduction/releases/download/v-bbc08f68dbbd24b5/reproduction__get_dataset.py",
+      "hf_path": "reproduction/get_dataset.py",
+      "sha256": "fad89222d50f9d9709225c34909be74c591df409c08b8b5951eba9d3cadfdd48"
+    },
+    "reproduction__leakage_battery.py": {
+      "bytes": 17379,
+      "download": "https://github.com/earino/factory-phmsa-pipeline-penalty-reduction/releases/download/v-bbc08f68dbbd24b5/reproduction__leakage_battery.py",
+      "hf_path": "reproduction/leakage_battery.py",
+      "sha256": "adbf7ee0aca0012b78cc1f1e4aeb968a23717cae30f66a02e080215e75f830e3"
+    },
+    "reproduction__provenance.json": {
+      "bytes": 573,
+      "download": "https://github.com/earino/factory-phmsa-pipeline-penalty-reduction/releases/download/v-bbc08f68dbbd24b5/reproduction__provenance.json",
+      "hf_path": "reproduction/provenance.json",
+      "sha256": "c4b7e3bae1aa9b5152d0080fd6ef89ce05da483deaa897e8ffa979063150217c"
+    },
+    "reproduction__qualify_dataset.py": {
+      "bytes": 66067,
+      "download": "https://github.com/earino/factory-phmsa-pipeline-penalty-reduction/releases/download/v-bbc08f68dbbd24b5/reproduction__qualify_dataset.py",
+      "hf_path": "reproduction/qualify_dataset.py",
+      "sha256": "bff6d43d0904182e2612c32bab702e41addbf389904a236c209e78be39e37a6b"
+    },
+    "reproduction__recovery_recipes.py": {
+      "bytes": 17609,
+      "download": "https://github.com/earino/factory-phmsa-pipeline-penalty-reduction/releases/download/v-bbc08f68dbbd24b5/reproduction__recovery_recipes.py",
+      "hf_path": "reproduction/recovery_recipes.py",
+      "sha256": "f64c542fcda232169c95ace17421b45275194b934938c0ea4c9b68e6f844ad0e"
+    },
+    "reproduction__requirements.txt": {
+      "bytes": 160,
+      "download": "https://github.com/earino/factory-phmsa-pipeline-penalty-reduction/releases/download/v-bbc08f68dbbd24b5/reproduction__requirements.txt",
+      "hf_path": "reproduction/requirements.txt",
+      "sha256": "5c72f3268174d20364624f76680e189c408a05dba2e7b8cfe12d077b3865e7f0"
+    },
+    "reproduction__source.json": {
+      "bytes": 16145,
+      "download": "https://github.com/earino/factory-phmsa-pipeline-penalty-reduction/releases/download/v-bbc08f68dbbd24b5/reproduction__source.json",
+      "hf_path": "reproduction/source.json",
+      "sha256": "a35e9f85825c0a4417c01ed3a6e454c713c379801ce4d66a37af8e1950d2bc8d"
+    },
+    "reproduction__source_io.py": {
+      "bytes": 5607,
+      "download": "https://github.com/earino/factory-phmsa-pipeline-penalty-reduction/releases/download/v-bbc08f68dbbd24b5/reproduction__source_io.py",
+      "hf_path": "reproduction/source_io.py",
+      "sha256": "0c60eed4968cd342148efbaac7e4fa98f00708d8e6c14c0929928687b9af1ea3"
+    },
+    "reproduction__train.py": {
+      "bytes": 2500,
+      "download": "https://github.com/earino/factory-phmsa-pipeline-penalty-reduction/releases/download/v-bbc08f68dbbd24b5/reproduction__train.py",
+      "hf_path": "reproduction/train.py",
+      "sha256": "a3c6bcf13735bc85c52129ded68f839090dffdc266ebc3810dc61b2e6ea5e7e8"
+    },
+    "reproduction__validate.py": {
+      "bytes": 1277,
+      "download": "https://github.com/earino/factory-phmsa-pipeline-penalty-reduction/releases/download/v-bbc08f68dbbd24b5/reproduction__validate.py",
+      "hf_path": "reproduction/validate.py",
+      "sha256": "b597e7f84fed614e64b4a86fbecbd6ec0145916a24d0d221a796586976418e7b"
+    },
+    "reproduction__validate.sh": {
+      "bytes": 482,
+      "download": "https://github.com/earino/factory-phmsa-pipeline-penalty-reduction/releases/download/v-bbc08f68dbbd24b5/reproduction__validate.sh",
+      "hf_path": "reproduction/validate.sh",
+      "sha256": "3f06ca48f11c2e05d331b4d8394284925de660c1d4b086d2f8243959e83b7e6d"
+    },
+    "source-checks.json": {
+      "bytes": 15889,
+      "download": "https://github.com/earino/factory-phmsa-pipeline-penalty-reduction/releases/download/v-bbc08f68dbbd24b5/source-checks.json",
+      "hf_path": "source-checks.json",
+      "sha256": "b51bbe7217be2dd9875375baa37363db35d981c425022227f3c6513d00dd2314"
+    },
+    "source-snapshot.tar.gz": {
+      "bytes": 524520,
+      "download": "https://github.com/earino/factory-phmsa-pipeline-penalty-reduction/releases/download/v-bbc08f68dbbd24b5/source-snapshot.tar.gz",
+      "hf_path": "source-snapshot.tar.gz",
+      "sha256": "996b9e49aefc759eafb59c3890c44842c71971b23d8188d687a3f936a7836c68"
+    },
+    "verify_dataset.py": {
+      "bytes": 1276,
+      "download": "https://github.com/earino/factory-phmsa-pipeline-penalty-reduction/releases/download/v-bbc08f68dbbd24b5/verify_dataset.py",
+      "hf_path": "verify_dataset.py",
+      "sha256": "f4a4bb7f565cdbd075c520621f881876b491eaed91a5e6e70afb31e4753f9834"
+    }
+  },
+  "baseline": {
+    "metrics": {
+      "Validation calendar_identity auc": 0.6205882352941177,
+      "Validation calendar_identity brier": 0.1823742838599128,
+      "Validation full_model auc": 0.6172268907563025,
+      "Validation full_model brier": 0.18742755379536652,
+      "Validation majority_prior auc": 0.5,
+      "Validation majority_prior brier": 0.18849675706082494
+    },
+    "scope": "Existing unmodified runner baseline on public validation only; no holdout scoring"
+  },
+  "configs": [],
+  "dataset": "phmsa-pipeline-penalty-reduction",
+  "documents": [
+    [
+      "README.md",
+      "Loading and reproduction"
+    ],
+    [
+      "evaluation.json",
+      "Measured baseline"
+    ],
+    [
+      "LICENSE.md",
+      "Licence and attribution"
+    ]
+  ],
+  "domain": "U.S. Department of Transportation, Pipeline and Hazardous Materials Safety Administration (PHMSA)",
+  "evaluation_use": "retrospective_research",
+  "github_repository": "earino/factory-phmsa-pipeline-penalty-reduction",
+  "hf_repository": "earino/factory-phmsa-pipeline-penalty-reduction",
+  "licenses": {
+    "attribution": "None required",
+    "citation": "",
+    "code": "MIT",
+    "compilation_scope": "Our additional compilation rights only; upstream terms remain in force.",
+    "data_compilation": "CC0-1.0",
+    "source_data": "Public Domain U.S. Government (PHMSA/DOT data-inventory designation for the Pipeline Enforcement Transparency Portal); U.S. Government work, 17 U.S.C. § 105"
+  },
+  "limitations": [
+    "Current-vintage retrospective extract as of 2026-11-03; historical fields may have been updated after case closure, so this does not prove the exact feature set was operationally available to an earlier decision-maker.",
+    "Right-censoring: cases not closed with a reduction within 36 months are coded 0, so later reductions are missed; closed cases with missing Assessed_Penalties are also coded 0 and may hide administrative eliminations recorded as blanks.",
+    "Selection: only NOPVs with positive proposed penalties are eligible; warning letters, notices of amendment, corrective action orders, and compliance-only cases are excluded.",
+    "Cases cluster by operator and sometimes share an inspection; no operator history or lagged outcome features are used, but evaluation should account for operator clustering.",
+    "The data dictionary is dated 2023 and uses some field names that differ from the 2026 raw header; construction must follow the raw header and map semantics explicitly.",
+    "No causal interpretation: inspection routes, regions, and case initiation reflect PHMSA enforcement selection and legal process, not random assignment.",
+    "The U.S. public-domain basis is territorial; 17 U.S.C. § 105 does not establish a worldwide dedication, and reuse outside the United States may depend on local law. No third-party photo or document rights are included.",
+    "Current-vintage extract as of 2026-11-03; historical records may have been revised after case closure, so this is retrospective research rather than a historical forecasting claim.",
+    "Right-censoring: cases not closed with a reduction within 36 months are coded zero, so later reductions are missed.",
+    "Closed cases with missing Assessed_Penalties are coded zero per the frozen task, not imputed.",
+    "Only NOPVs with positive proposed penalties are eligible; warning letters, notices of amendment, corrective action orders and compliance-only cases are excluded.",
+    "Cases cluster by operator and sometimes share an inspection; no operator history or lagged outcome features are used, and no corporate-hierarchy reconciliation is attempted.",
+    "The data dictionary is dated 2023 and uses some field names that differ from the 2026 raw header; construction follows raw header aliases and fails with observed headers if a required field is absent.",
+    "No full-row historical availability ledger exists; feature availability at historical notice dates is assumed from current field definitions and the dictionary.",
+    "No causal interpretation: inspection routes, regions and case initiation reflect PHMSA enforcement selection and legal process, not random assignment.",
+    "The U.S. public-domain basis is territorial; 17 U.S.C. 105 does not establish a worldwide dedication, and reuse outside the United States may depend on local law.",
+    "No uncertainty interval; observed differences do not establish universal headroom"
+  ],
+  "post": {
+    "paragraphs": [
+      "Will a PHMSA Notice of Probable Violation with a proposed civil penalty be closed within 36 months with a lower assessed penalty than proposed?",
+      "Population: NOPV cases with positive Proposed_Penalties and nonmissing Notice_Sent_Date from 2002-01-01 through 2023-06-30; deduplicated to earliest NOPV per WMS_Activity_Seq. Eligibility uses only decision-time information.",
+      "Target: y=1 iff the case has a nonmissing Closed_Date no later than 36 months after Notice_Sent_Date and Assessed_Penalties is nonmissing and strictly less than Proposed_Penalties (zero counts as elimination); otherwise y=0, including cases not closed with a reduction by 36 months. Closed cases with missing Assessed_Penalties are coded 0, not imputed.",
+      "Prediction time: Notice_Sent_Date, before the operator response, hearing or any order.",
+      "Splits: Fixed chronological boundaries by Notice_Sent_Date: train 2002-01-01 to 2016-12-31; evaluation 2017-01-01 to 2019-12-31; holdout 2020-01-01 to 2023-06-30. No embargo is needed because no lagged outcomes, rolling histories, operator histories, or future case records are used; related cases are deduplicated by WMS_Activity_Seq before splitting.",
+      "Outcome horizon: 36 months after Notice_Sent_Date; holdout notices end 2023-06-30, so all outcomes are observable by 2026-06-30 against the 2026-11-03 extract",
+      "Inputs: proposed_penalty_usd: Proposed civil penalty in dollars stated in the Notice of Probable Violation.; violation_category_count: Number of nonempty comma-separated violation categories in Violation_Category.; cited_regulation_count: Number of distinct nonempty regulation codes in Cited_Regulations.; integrity_management_flag: Whether Violation_Category includes Integrity Management.; pipeline_type: Pipeline segment type associated with the enforcement case, such as INTERSTATE LIQUID or INTERSTATE GAS TRANSMISSION.; region: PHMSA region that initiated the enforcement case.; discovery_route: How the case was discovered, such as Integrated, Specialized, Failure Investigation, Construction, SRCR or PA Program.; notice_actions: Notice action codes such as CO, CP, CO/CP, WI or NOA.; proposed_compliance_order: Whether a compliance order was proposed with the case."
+    ],
+    "title": "Phmsa Pipeline Penalty Reduction"
+  },
+  "publication_commits": {
+    "github": "da3c2eb34ce66a11d66f622920d6e23b688c1cfc",
+    "huggingface": "08ec49af768634f0c8c999780569c1288b352998"
+  },
+  "qualification": {
+    "gate_version": "1.6.1",
+    "result": "PASSED"
+  },
+  "record_sha256": "b37966153d4315e8d705301a0bdcf35bb486dc193e3fd35c4ddbef090caf0765",
+  "release_date": "2026-11-13",
+  "release_schema": "factory-1",
+  "release_tag": "v-bbc08f68dbbd24b5",
+  "schema_version": 1,
+  "site_revision": 1,
+  "source": {
+    "name": "U.S. Department of Transportation, Pipeline and Hazardous Materials Safety Administration (PHMSA)",
+    "url": "https://primis.phmsa.dot.gov/enforcement-data/Enforcement%20Data%20Dictionary.pdf"
+  },
+  "splits": {
+    "eval": {
+      "rows": 139
+    },
+    "holdout": {
+      "rows": 149
+    },
+    "train": {
+      "rows": 670
+    }
+  },
+  "summary": "Will a PHMSA Notice of Probable Violation with a proposed civil penalty be closed within 36 months with a lower assessed penalty than proposed?",
+  "task_type": "binary-classification",
+  "title": "Phmsa Pipeline Penalty Reduction",
+  "urls": {
+    "catalog": "https://earino.github.io/dataset-factory-site/",
+    "github": "https://github.com/earino/factory-phmsa-pipeline-penalty-reduction",
+    "github_release": "https://github.com/earino/factory-phmsa-pipeline-penalty-reduction/releases/tag/v-bbc08f68dbbd24b5",
+    "huggingface": "https://huggingface.co/datasets/earino/factory-phmsa-pipeline-penalty-reduction",
+    "huggingface_version": "https://huggingface.co/datasets/earino/factory-phmsa-pipeline-penalty-reduction/tree/v-bbc08f68dbbd24b5",
+    "version": "https://earino.github.io/factory-phmsa-pipeline-penalty-reduction/versions/v-bbc08f68dbbd24b5/",
+    "website": "https://earino.github.io/factory-phmsa-pipeline-penalty-reduction/"
+  }
+}
