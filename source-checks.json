@@ -1,0 +1,323 @@
+{
+  "checks": [
+    {
+      "check": "source file downloaded",
+      "observed": "phmsa_pipeline_enforcement_raw.txt with 1977064 bytes",
+      "expected": "nonempty local copy recorded by source_io.fetch together with its source URL and SHA256",
+      "passed": true
+    },
+    {
+      "check": "source file SHA256 recorded",
+      "observed": "ac29ec425cc00e037d669e415c5e25c32f03ae7af28c5051d4e0d3f30e3a8992",
+      "expected": "64 hexadecimal characters recorded for the selected source member",
+      "passed": true
+    },
+    {
+      "check": "text decoded without loss",
+      "observed": "encoding cp1252; non-ASCII bytes 4; earlier attempts: utf-8-sig -> 'utf-8' codec can't decode byte 0x96 in position 159024: invalid start byte",
+      "expected": "publisher text decodes losslessly and no byte is replaced with the U+FFFD character",
+      "passed": true
+    },
+    {
+      "check": "header row is tab delimited",
+      "observed": "53 header fields; first 300 characters: CPF_Number\tOperator_ID\tOperator_Name\tOperator_Searchable_Name\tRegion\tPipeline_Type\tHow_Discovered?\tCase_Type\tNotice_Actions\tCited_Regulations\tViolation_Category\tProposed_Penalties\tAssessed_Penalties\tCollected_Penalties\tCase_Status\tOpened_Date\tLatest_Order_Type\tLatest_Order_Date\tClosed_Date\tNotice_Se",
+      "expected": "tab-separated header row carrying multiple columns",
+      "passed": true
+    },
+    {
+      "check": "parsed column count",
+      "observed": "53 columns; first 200 header characters: CPF_Number\tOperator_ID\tOperator_Name\tOperator_Searchable_Name\tRegion\tPipeline_Type\tHow_Discovered?\tCase_Type\tNotice_Actions\tCited_Regulations\tViolation_Category\tProposed_Penalties\tAssessed_Penalties\tC",
+      "expected": "at least 10 tab-delimited columns",
+      "passed": true
+    },
+    {
+      "check": "Case_Type distribution",
+      "observed": "Notice of Amendment: 1633; Warning Letter: 1628; Notice of Probable Violation: 1616; Corrective Action Order: 176; Safety Order: 50",
+      "expected": "rows whose Case_Type denotes a Notice of Probable Violation are present; every other case type is counted here and excluded rather than treated as a failure",
+      "passed": true
+    },
+    {
+      "check": "NOPV row count",
+      "observed": "1616 rows; excluded other case types: 3487",
+      "expected": "at least one row for the frozen population",
+      "passed": true
+    },
+    {
+      "check": "Proposed_Penalties parse coverage",
+      "observed": "1074 of 1616 NOPV rows parse as money; nonblank unparseable rows excluded: 0",
+      "expected": "nonblank Proposed_Penalties text parses as a USD amount; rows that cannot be parsed are excluded from the population and counted here",
+      "passed": true
+    },
+    {
+      "check": "Notice_Sent_Date parse coverage",
+      "observed": "1616 of 1616 NOPV rows carry a parsed notice date",
+      "expected": "nonmissing parseable notice dates define the population; rows without one are excluded and counted",
+      "passed": true
+    },
+    {
+      "check": "positive proposed penalty population",
+      "observed": "excluded 544 NOPV rows with missing or nonpositive Proposed_Penalties; excluded 0 rows with an unparseable notice date; kept 1072",
+      "expected": "every kept row has a strictly positive proposed penalty and a parsed notice date, and at least one row is kept",
+      "passed": true
+    },
+    {
+      "check": "kept proposed penalties strictly positive",
+      "observed": "1072 of 1072 kept rows; minimum value 2000.0",
+      "expected": "all kept proposed penalty amounts are greater than zero",
+      "passed": true
+    },
+    {
+      "check": "WMS_Activity_Seq usability",
+      "observed": "missing keys among eligible rows: 0 of 1072; present keys: 1072",
+      "expected": "the activity sequence key is present for the deduplicated population; rows lacking it are excluded and counted",
+      "passed": true
+    },
+    {
+      "check": "notice date population window",
+      "observed": "excluded 104 eligible rows outside 2002-01-01 through 2023-06-30; kept 968 rows from 2002-02-06 to 2023-06-22",
+      "expected": "every kept notice date falls in the frozen half-open window [2002-01-01, 2023-07-01)",
+      "passed": true
+    },
+    {
+      "check": "WMS duplicate removal",
+      "observed": "removed 10 repeated WMS_Activity_Seq rows; remaining 958",
+      "expected": "keep the earliest notice per WMS_Activity_Seq so related rows never straddle splits",
+      "passed": true
+    },
+    {
+      "check": "Closed_Date parse",
+      "observed": "unparseable nonblank values among kept rows: 0; blank values: 6",
+      "expected": "each nonblank Closed_Date on a kept row parses as a calendar date; blanks are interpreted as not closed",
+      "passed": true
+    },
+    {
+      "check": "Assessed_Penalties parse",
+      "observed": "unparseable nonblank values among kept rows: 0; blank values: 17",
+      "expected": "each nonblank Assessed_Penalties on a kept row parses as a USD amount; blanks stay missing and are never turned into a numeric zero",
+      "passed": true
+    },
+    {
+      "check": "Closed_Date chronology",
+      "observed": "kept rows with Closed_Date before Notice_Sent_Date: 0",
+      "expected": "no kept row closes before its notice was sent",
+      "passed": true
+    },
+    {
+      "check": "label composition",
+      "observed": "positives 216; negatives 742; closed within horizon 775; assessed below proposed 322; closed but missing assessment 16",
+      "expected": "the label is 1 only when a parsed Closed_Date falls inside 36 months of the notice and a parsed Assessed_Penalties is strictly below Proposed_Penalties; censored and unassessed cases stay 0",
+      "passed": true
+    },
+    {
+      "check": "unit check for the 36 month horizon",
+      "observed": "Closed_Date compared against Notice_Sent_Date advanced by 36 calendar months; the semantic and the numeric unit are both months",
+      "expected": "the frozen domain threshold is a month count, not days or years",
+      "passed": true,
+      "kind": "unit"
+    },
+    {
+      "check": "violation_category_count coverage",
+      "observed": "957 of 958 kept rows nonmissing; distinct values 8",
+      "expected": "the declared feature is parsed from its publisher field for kept rows and is not an empty column; missing values stay missing",
+      "passed": true
+    },
+    {
+      "check": "cited_regulation_count coverage",
+      "observed": "957 of 958 kept rows nonmissing; distinct values 23",
+      "expected": "the declared feature is parsed from its publisher field for kept rows and is not an empty column; missing values stay missing",
+      "passed": true
+    },
+    {
+      "check": "integrity_management_flag coverage",
+      "observed": "957 of 958 kept rows nonmissing; distinct values 2",
+      "expected": "the declared feature is parsed from its publisher field for kept rows and is not an empty column; missing values stay missing",
+      "passed": true
+    },
+    {
+      "check": "pipeline_type coverage",
+      "observed": "956 of 958 kept rows nonmissing; distinct values 32",
+      "expected": "the declared feature is parsed from its publisher field for kept rows and is not an empty column; missing values stay missing",
+      "passed": true
+    },
+    {
+      "check": "region coverage",
+      "observed": "958 of 958 kept rows nonmissing; distinct values 5",
+      "expected": "the declared feature is parsed from its publisher field for kept rows and is not an empty column; missing values stay missing",
+      "passed": true
+    },
+    {
+      "check": "discovery_route coverage",
+      "observed": "958 of 958 kept rows nonmissing; distinct values 10",
+      "expected": "the declared feature is parsed from its publisher field for kept rows and is not an empty column; missing values stay missing",
+      "passed": true
+    },
+    {
+      "check": "notice_actions coverage",
+      "observed": "958 of 958 kept rows nonmissing; distinct values 34",
+      "expected": "the declared feature is parsed from its publisher field for kept rows and is not an empty column; missing values stay missing",
+      "passed": true
+    },
+    {
+      "check": "proposed_compliance_order coverage",
+      "observed": "530 of 958 kept rows nonmissing; distinct values 1",
+      "expected": "the declared feature is parsed from its publisher field for kept rows and is not an empty column; missing values stay missing",
+      "passed": true
+    },
+    {
+      "check": "case ID completeness",
+      "observed": "blank identifiers: 0 of 958; identifiers taken from CPF_Number: 958; fallback to WMS_Activity_Seq: 0",
+      "expected": "every kept row carries a nonblank stable identifier",
+      "passed": true
+    },
+    {
+      "check": "case ID uniqueness",
+      "observed": "duplicate identifiers after disambiguation: 0",
+      "expected": "zero duplicate identifiers so every shipped row ID is unique",
+      "passed": true
+    },
+    {
+      "check": "proposed penalty stored without rounding",
+      "observed": "stored dtype Int64; whole-dollar values present: True; maximum absolute difference from the parsed source value: 0.0",
+      "expected": "shipped amounts equal the parsed publisher amounts, with decimals kept when the publisher uses them",
+      "passed": true
+    },
+    {
+      "check": "split assignment completeness",
+      "observed": "train: 670; eval: 139; holdout: 149; unassigned: 0",
+      "expected": "every kept notice date lands in exactly one frozen half-open window",
+      "passed": true
+    },
+    {
+      "check": "output column order",
+      "observed": "case_id, notice_date, proposed_penalty_usd, violation_category_count, cited_regulation_count, integrity_management_flag, pipeline_type, region, discovery_route, notice_actions, proposed_compliance_order, penalty_reduced, _split",
+      "expected": "case_id, notice_date, proposed_penalty_usd, violation_category_count, cited_regulation_count, integrity_management_flag, pipeline_type, region, discovery_route, notice_actions, proposed_compliance_order, penalty_reduced, _split",
+      "passed": true
+    },
+    {
+      "check": "target binary",
+      "observed": "0, 1",
+      "expected": "only 0 and 1",
+      "passed": true
+    },
+    {
+      "check": "target header name",
+      "observed": "penalty_reduced",
+      "expected": "the shipped target column is named exactly penalty_reduced",
+      "passed": true
+    },
+    {
+      "check": "no post hoc column shipped",
+      "observed": "proposed_penalty_usd, violation_category_count, cited_regulation_count, integrity_management_flag, pipeline_type, region, discovery_route, notice_actions, proposed_compliance_order",
+      "expected": "Assessed_Penalties and Closed_Date never appear as features",
+      "passed": true
+    },
+    {
+      "check": "train split rows",
+      "observed": "670 rows; positives 123",
+      "expected": "greater than zero rows in the frozen window",
+      "passed": true
+    },
+    {
+      "check": "train split columns",
+      "observed": "case_id, notice_date, proposed_penalty_usd, violation_category_count, cited_regulation_count, integrity_management_flag, pipeline_type, region, discovery_route, notice_actions, proposed_compliance_order, penalty_reduced, _split",
+      "expected": "identical columns across all splits",
+      "passed": true
+    },
+    {
+      "check": "eval split rows",
+      "observed": "139 rows; positives 34",
+      "expected": "greater than zero rows in the frozen window",
+      "passed": true
+    },
+    {
+      "check": "eval split columns",
+      "observed": "case_id, notice_date, proposed_penalty_usd, violation_category_count, cited_regulation_count, integrity_management_flag, pipeline_type, region, discovery_route, notice_actions, proposed_compliance_order, penalty_reduced, _split",
+      "expected": "identical columns across all splits",
+      "passed": true
+    },
+    {
+      "check": "holdout split rows",
+      "observed": "149 rows; positives 59",
+      "expected": "greater than zero rows in the frozen window",
+      "passed": true
+    },
+    {
+      "check": "holdout split columns",
+      "observed": "case_id, notice_date, proposed_penalty_usd, violation_category_count, cited_regulation_count, integrity_management_flag, pipeline_type, region, discovery_route, notice_actions, proposed_compliance_order, penalty_reduced, _split",
+      "expected": "identical columns across all splits",
+      "passed": true
+    },
+    {
+      "check": "proposed_penalty_usd final coverage",
+      "observed": "958 of 958 rows nonmissing",
+      "expected": "at least one observed value in the shipped column; missing stays missing",
+      "passed": true
+    },
+    {
+      "check": "violation_category_count final coverage",
+      "observed": "957 of 958 rows nonmissing",
+      "expected": "at least one observed value in the shipped column; missing stays missing",
+      "passed": true
+    },
+    {
+      "check": "cited_regulation_count final coverage",
+      "observed": "957 of 958 rows nonmissing",
+      "expected": "at least one observed value in the shipped column; missing stays missing",
+      "passed": true
+    },
+    {
+      "check": "integrity_management_flag final coverage",
+      "observed": "957 of 958 rows nonmissing",
+      "expected": "at least one observed value in the shipped column; missing stays missing",
+      "passed": true
+    },
+    {
+      "check": "pipeline_type final coverage",
+      "observed": "956 of 958 rows nonmissing",
+      "expected": "at least one observed value in the shipped column; missing stays missing",
+      "passed": true
+    },
+    {
+      "check": "region final coverage",
+      "observed": "958 of 958 rows nonmissing",
+      "expected": "at least one observed value in the shipped column; missing stays missing",
+      "passed": true
+    },
+    {
+      "check": "discovery_route final coverage",
+      "observed": "958 of 958 rows nonmissing",
+      "expected": "at least one observed value in the shipped column; missing stays missing",
+      "passed": true
+    },
+    {
+      "check": "notice_actions final coverage",
+      "observed": "958 of 958 rows nonmissing",
+      "expected": "at least one observed value in the shipped column; missing stays missing",
+      "passed": true
+    },
+    {
+      "check": "proposed_compliance_order final coverage",
+      "observed": "530 of 958 rows nonmissing",
+      "expected": "at least one observed value in the shipped column; missing stays missing",
+      "passed": true
+    },
+    {
+      "check": "written file public/train.csv",
+      "observed": "64666 bytes; 670 rows; header case_id, notice_date, proposed_penalty_usd, violation_category_count, cited_regulation_count, integrity_management_flag, pipeline_type, region, discovery_route, notice_actions, proposed_compliance_order, penalty_reduced",
+      "expected": "file exists, is nonempty and round-trips its declared header and row count",
+      "passed": true
+    },
+    {
+      "check": "written file public/eval.csv",
+      "observed": "12911 bytes; 139 rows; header case_id, notice_date, proposed_penalty_usd, violation_category_count, cited_regulation_count, integrity_management_flag, pipeline_type, region, discovery_route, notice_actions, proposed_compliance_order, penalty_reduced",
+      "expected": "file exists, is nonempty and round-trips its declared header and row count",
+      "passed": true
+    },
+    {
+      "check": "written file private/holdout.csv",
+      "observed": "14700 bytes; 149 rows; header case_id, notice_date, proposed_penalty_usd, violation_category_count, cited_regulation_count, integrity_management_flag, pipeline_type, region, discovery_route, notice_actions, proposed_compliance_order, penalty_reduced",
+      "expected": "file exists, is nonempty and round-trips its declared header and row count",
+      "passed": true
+    }
+  ]
+}

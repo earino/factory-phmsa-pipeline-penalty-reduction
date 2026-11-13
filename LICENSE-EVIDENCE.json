@@ -1,0 +1,11 @@
+{
+  "ok": true,
+  "terms_url": "https://data.transportation.gov/Pipelines-and-Hazmat/Pipeline-Enforcement-Transparency-Portal/m28n-9ah6/about_data",
+  "terms_sha256": "9fb1a68a63eb21a0d36aaefac6d7475947c6ea0d4b66df38889e761b90ab2139",
+  "documentation_url": "https://primis.phmsa.dot.gov/enforcement-data/Enforcement%20Data%20Dictionary.pdf",
+  "documentation_sha256": "372b4a9e7a912e6af3f1846ba7311fee8ebf4286b05eebf47b89acca7534fcaf",
+  "quoted_excerpt": "Public Domain U.S. Government",
+  "excerpt_found": true,
+  "excerpt_match": "contiguous",
+  "scope": "Captured publisher bytes and quote presence; semantic applicability reviewed separately"
+}

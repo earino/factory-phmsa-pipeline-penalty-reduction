@@ -1,0 +1,368 @@
+{
+  "schema": "factory-1",
+  "dataset": "phmsa-pipeline-penalty-reduction",
+  "version": "v-bbc08f68dbbd24b5",
+  "artifact_version": "04b70fa61c8b4b68fb11974080984ef075ff8470c5ee52379579266b5ccfac1a",
+  "assets": {
+    "LICENSE-EVIDENCE.json": {
+      "sha256": "9d2abc5924e3955c2934d70222207498c3a1c7f792b32151503d7eb8ad6b5496",
+      "bytes": 651,
+      "asset_name": "LICENSE-EVIDENCE.json"
+    },
+    "LICENSE.md": {
+      "sha256": "477fe699db77e1e1b4690879dfd9c51d234ba374847c45db0a5637df093bf23a",
+      "bytes": 948,
+      "asset_name": "LICENSE.md"
+    },
+    "README.md": {
+      "sha256": "0da2d2b1e7dc040b57918c790946fdebb141060d550d872b35328aaa28c65ffa",
+      "bytes": 5072,
+      "asset_name": "README.md"
+    },
+    "SOURCES.json": {
+      "sha256": "e0b6bffc8f735726fa257341fa70b577c1963633f1ece9b8d2bcfc0c5cbc07ba",
+      "bytes": 997,
+      "asset_name": "SOURCES.json"
+    },
+    "evaluation.json": {
+      "sha256": "b1321867156ee9bc8ffd800db903b5724eca7137113e89cb307fb7dbd785fee5",
+      "bytes": 2280,
+      "asset_name": "evaluation.json"
+    },
+    "extract/meta.json": {
+      "sha256": "2f925208572551b36fd013a5dafae65bb51da04f014915db22c981a0ec7a4d71",
+      "bytes": 1511,
+      "asset_name": "extract__meta.json"
+    },
+    "extract/private/holdout.csv": {
+      "sha256": "8c408e94871aece221d4d1ed6d420ee9d9ab6574c00e71534ba8aaf0aee5ef1e",
+      "bytes": 14700,
+      "asset_name": "extract__private__holdout.csv"
+    },
+    "extract/public/eval.csv": {
+      "sha256": "8ee6b14d7148f2a06b622010bbf0b8bb21e647956585764486b803ff055d27dc",
+      "bytes": 12911,
+      "asset_name": "extract__public__eval.csv"
+    },
+    "extract/public/train.csv": {
+      "sha256": "adaf6e3a33524ffe745a6d6fadd07ca3dedf2a93c8e110f450559cf56c277f74",
+      "bytes": 64666,
+      "asset_name": "extract__public__train.csv"
+    },
+    "extract/quality.json": {
+      "sha256": "d291f3d5ac04d1d83676c3ed864aaf30299cb9ad69f894f4450a798f2cf5be55",
+      "bytes": 22738,
+      "asset_name": "extract__quality.json"
+    },
+    "get_dataset.py": {
+      "sha256": "fad89222d50f9d9709225c34909be74c591df409c08b8b5951eba9d3cadfdd48",
+      "bytes": 3680,
+      "asset_name": "get_dataset.py"
+    },
+    "qualification.json": {
+      "sha256": "1ccb7a62e299c7a2750097d9cd8dcb1a79aab110a660ad33445c1c3171c86f10",
+      "bytes": 18377,
+      "asset_name": "qualification.json"
+    },
+    "reproduction/LICENSE-CC0-1.0.txt": {
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+      "bytes": 7048,
+      "asset_name": "reproduction__LICENSE-CC0-1.0.txt"
+    },
+    "reproduction/LICENSE-MIT.txt": {
+      "sha256": "56b932ff064e5da113ae10175c8546325f64f26e1ece71683ffcbf8b2304fe1c",
+      "bytes": 1124,
+      "asset_name": "reproduction__LICENSE-MIT.txt"
+    },
+    "reproduction/artifact_scrub.py": {
+      "sha256": "8c663253e691a7b8751f9c853b40a3752a833360caafb1ea8e8f534e64af4b68",
+      "bytes": 11369,
+      "asset_name": "reproduction__artifact_scrub.py"
+    },
+    "reproduction/build.py": {
+      "sha256": "32b1f0e70cb58713fd3482c9938f8c8bffbf21c17ddd8e64429d05bceb67434b",
+      "bytes": 24214,
+      "asset_name": "reproduction__build.py"
+    },
+    "reproduction/construction.json": {
+      "sha256": "d7b716730c2a8ea9690474ccd6591173c46ca1405e02bd30b087a129f49eed31",
+      "bytes": 24675,
+      "asset_name": "reproduction__construction.json"
+    },
+    "reproduction/dataset_package.py": {
+      "sha256": "c2364defe58dcc99322be59a1bb04894ce00e823ce37afeb37bc31012f744327",
+      "bytes": 7927,
+      "asset_name": "reproduction__dataset_package.py"
+    },
+    "reproduction/dataset_run.py": {
+      "sha256": "8085fae14d6e93b852e692e18c1ef72113a3601f48f78901b6d1ae6db278de57",
+      "bytes": 12381,
+      "asset_name": "reproduction__dataset_run.py"
+    },
+    "reproduction/get_dataset.py": {
+      "sha256": "fad89222d50f9d9709225c34909be74c591df409c08b8b5951eba9d3cadfdd48",
+      "bytes": 3680,
+      "asset_name": "reproduction__get_dataset.py"
+    },
+    "reproduction/leakage_battery.py": {
+      "sha256": "adbf7ee0aca0012b78cc1f1e4aeb968a23717cae30f66a02e080215e75f830e3",
+      "bytes": 17379,
+      "asset_name": "reproduction__leakage_battery.py"
+    },
+    "reproduction/provenance.json": {
+      "sha256": "c4b7e3bae1aa9b5152d0080fd6ef89ce05da483deaa897e8ffa979063150217c",
+      "bytes": 573,
+      "asset_name": "reproduction__provenance.json"
+    },
+    "reproduction/qualify_dataset.py": {
+      "sha256": "bff6d43d0904182e2612c32bab702e41addbf389904a236c209e78be39e37a6b",
+      "bytes": 66067,
+      "asset_name": "reproduction__qualify_dataset.py"
+    },
+    "reproduction/recovery_recipes.py": {
+      "sha256": "f64c542fcda232169c95ace17421b45275194b934938c0ea4c9b68e6f844ad0e",
+      "bytes": 17609,
+      "asset_name": "reproduction__recovery_recipes.py"
+    },
+    "reproduction/requirements.txt": {
+      "sha256": "5c72f3268174d20364624f76680e189c408a05dba2e7b8cfe12d077b3865e7f0",
+      "bytes": 160,
+      "asset_name": "reproduction__requirements.txt"
+    },
+    "reproduction/source.json": {
+      "sha256": "a35e9f85825c0a4417c01ed3a6e454c713c379801ce4d66a37af8e1950d2bc8d",
+      "bytes": 16145,
+      "asset_name": "reproduction__source.json"
+    },
+    "reproduction/source_io.py": {
+      "sha256": "0c60eed4968cd342148efbaac7e4fa98f00708d8e6c14c0929928687b9af1ea3",
+      "bytes": 5607,
+      "asset_name": "reproduction__source_io.py"
+    },
+    "reproduction/train.py": {
+      "sha256": "a3c6bcf13735bc85c52129ded68f839090dffdc266ebc3810dc61b2e6ea5e7e8",
+      "bytes": 2500,
+      "asset_name": "reproduction__train.py"
+    },
+    "reproduction/validate.py": {
+      "sha256": "b597e7f84fed614e64b4a86fbecbd6ec0145916a24d0d221a796586976418e7b",
+      "bytes": 1277,
+      "asset_name": "reproduction__validate.py"
+    },
+    "reproduction/validate.sh": {
+      "sha256": "3f06ca48f11c2e05d331b4d8394284925de660c1d4b086d2f8243959e83b7e6d",
+      "bytes": 482,
+      "asset_name": "reproduction__validate.sh"
+    },
+    "source-checks.json": {
+      "sha256": "b51bbe7217be2dd9875375baa37363db35d981c425022227f3c6513d00dd2314",
+      "bytes": 15889,
+      "asset_name": "source-checks.json"
+    },
+    "source-snapshot.tar.gz": {
+      "sha256": "996b9e49aefc759eafb59c3890c44842c71971b23d8188d687a3f936a7836c68",
+      "bytes": 524520,
+      "asset_name": "source-snapshot.tar.gz"
+    },
+    "verify_dataset.py": {
+      "sha256": "f4a4bb7f565cdbd075c520621f881876b491eaed91a5e6e70afb31e4753f9834",
+      "bytes": 1276,
+      "asset_name": "verify_dataset.py"
+    }
+  },
+  "source": {
+    "attribution": "None required",
+    "citation": "",
+    "documentation_url": "https://primis.phmsa.dot.gov/enforcement-data/Enforcement%20Data%20Dictionary.pdf",
+    "license": "Public Domain U.S. Government (PHMSA/DOT data-inventory designation for the Pipeline Enforcement Transparency Portal); U.S. Government work, 17 U.S.C. \u00a7 105",
+    "publisher": "U.S. Department of Transportation, Pipeline and Hazardous Materials Safety Administration (PHMSA)",
+    "redistribution": true,
+    "terms_excerpt": "Public Domain U.S. Government",
+    "terms_url": "https://data.transportation.gov/Pipelines-and-Hazmat/Pipeline-Enforcement-Transparency-Portal/m28n-9ah6/about_data",
+    "urls": [
+      "https://primis.phmsa.dot.gov/enforcement-documents/PHMSA%20Pipeline%20Enforcement%20Raw%20Data.txt",
+      "https://primis.phmsa.dot.gov/enforcement-data/"
+    ]
+  },
+  "task": {
+    "decision_user": "Pipeline operator regulatory-compliance counsel deciding whether to contest or negotiate the Notice of Probable Violation",
+    "features": [
+      {
+        "availability": "Recorded in Proposed_Penalties at Notice_Sent_Date; this is the notice-stage demand, not the final assessment. Current-vintage extract; historical availability assumed.",
+        "evidence_url": "https://primis.phmsa.dot.gov/enforcement-data/Enforcement%20Data%20Dictionary.pdf",
+        "meaning": "Proposed civil penalty in dollars stated in the Notice of Probable Violation.",
+        "name": "proposed_penalty_usd"
+      },
+      {
+        "availability": "Derived only from comma-separated categories present in Violation_Category at notice; blank remains missing.",
+        "evidence_url": "https://primis.phmsa.dot.gov/enforcement-data/Enforcement%20Data%20Dictionary.pdf",
+        "meaning": "Number of nonempty comma-separated violation categories in Violation_Category.",
+        "name": "violation_category_count"
+      },
+      {
+        "availability": "Derived only from regulations cited in Cited_Regulations at notice; blank remains missing.",
+        "evidence_url": "https://primis.phmsa.dot.gov/enforcement-data/Enforcement%20Data%20Dictionary.pdf",
+        "meaning": "Number of distinct nonempty regulation codes in Cited_Regulations.",
+        "name": "cited_regulation_count"
+      },
+      {
+        "availability": "Derived from whether Violation_Category contains Integrity Management at notice; blank remains missing.",
+        "evidence_url": "https://primis.phmsa.dot.gov/enforcement-data/Enforcement%20Data%20Dictionary.pdf",
+        "meaning": "Whether Violation_Category includes Integrity Management.",
+        "name": "integrity_management_flag"
+      },
+      {
+        "availability": "Recorded on the case at notice; current-vintage extract; historical availability assumed.",
+        "evidence_url": "https://primis.phmsa.dot.gov/enforcement-data/Enforcement%20Data%20Dictionary.pdf",
+        "meaning": "Pipeline segment type associated with the enforcement case, such as INTERSTATE LIQUID or INTERSTATE GAS TRANSMISSION.",
+        "name": "pipeline_type"
+      },
+      {
+        "availability": "Recorded on the case at notice; current-vintage extract; historical availability assumed.",
+        "evidence_url": "https://primis.phmsa.dot.gov/enforcement-data/Enforcement%20Data%20Dictionary.pdf",
+        "meaning": "PHMSA region that initiated the enforcement case.",
+        "name": "region"
+      },
+      {
+        "availability": "Recorded in How_Discovered at case opening and notice; current-vintage extract; historical availability assumed.",
+        "evidence_url": "https://primis.phmsa.dot.gov/enforcement-data/Enforcement%20Data%20Dictionary.pdf",
+        "meaning": "How the case was discovered, such as Integrated, Specialized, Failure Investigation, Construction, SRCR or PA Program.",
+        "name": "discovery_route"
+      },
+      {
+        "availability": "Recorded in Notice_Actions at notice; current-vintage extract; historical availability assumed.",
+        "evidence_url": "https://primis.phmsa.dot.gov/enforcement-data/Enforcement%20Data%20Dictionary.pdf",
+        "meaning": "Notice action codes such as CO, CP, CO/CP, WI or NOA.",
+        "name": "notice_actions"
+      },
+      {
+        "availability": "Recorded in Proposed_Compliance_Order_Ind at notice; blank or unknown remains missing rather than zero.",
+        "evidence_url": "https://primis.phmsa.dot.gov/enforcement-data/Enforcement%20Data%20Dictionary.pdf",
+        "meaning": "Whether a compliance order was proposed with the case.",
+        "name": "proposed_compliance_order"
+      }
+    ],
+    "outcome_horizon": "36 months after Notice_Sent_Date; holdout notices end 2023-06-30, so all outcomes are observable by 2026-06-30 against the 2026-11-03 extract",
+    "population": "NOPV cases with positive Proposed_Penalties and nonmissing Notice_Sent_Date from 2002-01-01 through 2023-06-30; deduplicated to earliest NOPV per WMS_Activity_Seq. Eligibility uses only decision-time information.",
+    "prediction_time": "Notice_Sent_Date, before the operator response, hearing or any order.",
+    "question": "Will a PHMSA Notice of Probable Violation with a proposed civil penalty be closed within 36 months with a lower assessed penalty than proposed?",
+    "simple_references": "Majority class; logistic regression using log(1 + proposed_penalty_usd) alone; calendar-year base rate. No persistence baseline is appropriate because cases are not a regularly sampled time series.",
+    "split_policy": "Fixed chronological boundaries by Notice_Sent_Date: train 2002-01-01 to 2016-12-31; evaluation 2017-01-01 to 2019-12-31; holdout 2020-01-01 to 2023-06-30. No embargo is needed because no lagged outcomes, rolling histories, operator histories, or future case records are used; related cases are deduplicated by WMS_Activity_Seq before splitting.",
+    "target": "y=1 iff the case has a nonmissing Closed_Date no later than 36 months after Notice_Sent_Date and Assessed_Penalties is nonmissing and strictly less than Proposed_Penalties (zero counts as elimination); otherwise y=0, including cases not closed with a reduction by 36 months. Closed cases with missing Assessed_Penalties are coded 0, not imputed.",
+    "usefulness": "The proposed demand is known at notice, but the final assessment is not; the task tests whether violation mix, enforcement channel, pipeline segment and proposed amount predict whether PHMSA demand is discounted. It is not a copied status field and supports contest-versus-negotiate triage."
+  },
+  "rows": {
+    "train": 670,
+    "eval": 139,
+    "holdout": 149
+  },
+  "evaluation_contract": {
+    "access": "isolated_rows",
+    "cross_row_audit": {
+      "auxiliary_files_review": "Only public/train.csv, public/eval.csv and private/holdout.csv are written; no auxiliary label or scaffold files.",
+      "probes": [],
+      "rationale": "Each row is one deduplicated enforcement case; features use only notice-time fields and no cross-row histories."
+    },
+    "feature_evidence": {
+      "case_id": {
+        "availability": "Derived from CPF at notice; WMS_Activity_Seq is used only as a fallback for blank or duplicate CPF values. Observed in the current raw extract; historical availability assumed.",
+        "source": "https://primis.phmsa.dot.gov/enforcement-documents/PHMSA%20Pipeline%20Enforcement%20Raw%20Data.txt",
+        "status": "verified"
+      },
+      "cited_regulation_count": {
+        "availability": "Derived only from regulations cited in Cited_Regulations at notice; blank remains missing.",
+        "source": "https://primis.phmsa.dot.gov/enforcement-data/Enforcement%20Data%20Dictionary.pdf",
+        "status": "verified"
+      },
+      "discovery_route": {
+        "availability": "Recorded in How_Discovered at case opening and notice; current-vintage extract; historical availability assumed.",
+        "source": "https://primis.phmsa.dot.gov/enforcement-data/Enforcement%20Data%20Dictionary.pdf",
+        "status": "verified"
+      },
+      "integrity_management_flag": {
+        "availability": "Derived from whether Violation_Category contains Integrity Management at notice; blank remains missing.",
+        "source": "https://primis.phmsa.dot.gov/enforcement-data/Enforcement%20Data%20Dictionary.pdf",
+        "status": "verified"
+      },
+      "notice_actions": {
+        "availability": "Recorded in Notice_Actions at notice; current-vintage extract; historical availability assumed.",
+        "source": "https://primis.phmsa.dot.gov/enforcement-data/Enforcement%20Data%20Dictionary.pdf",
+        "status": "verified"
+      },
+      "notice_date": {
+        "availability": "Recorded in Notice_Sent_Date at notice. Observed in the current raw extract; historical availability assumed.",
+        "source": "https://primis.phmsa.dot.gov/enforcement-documents/PHMSA%20Pipeline%20Enforcement%20Raw%20Data.txt",
+        "status": "verified"
+      },
+      "pipeline_type": {
+        "availability": "Recorded on the case at notice; current-vintage extract; historical availability assumed.",
+        "source": "https://primis.phmsa.dot.gov/enforcement-data/Enforcement%20Data%20Dictionary.pdf",
+        "status": "verified"
+      },
+      "proposed_compliance_order": {
+        "availability": "Recorded in Proposed_Compliance_Order_Ind at notice; blank or unknown remains missing rather than zero.",
+        "source": "https://primis.phmsa.dot.gov/enforcement-data/Enforcement%20Data%20Dictionary.pdf",
+        "status": "verified"
+      },
+      "proposed_penalty_usd": {
+        "availability": "Recorded in Proposed_Penalties at Notice_Sent_Date; this is the notice-stage demand, not the final assessment. Current-vintage extract; historical availability assumed.",
+        "source": "https://primis.phmsa.dot.gov/enforcement-data/Enforcement%20Data%20Dictionary.pdf",
+        "status": "verified"
+      },
+      "region": {
+        "availability": "Recorded on the case at notice; current-vintage extract; historical availability assumed.",
+        "source": "https://primis.phmsa.dot.gov/enforcement-data/Enforcement%20Data%20Dictionary.pdf",
+        "status": "verified"
+      },
+      "violation_category_count": {
+        "availability": "Derived only from comma-separated categories present in Violation_Category at notice; blank remains missing.",
+        "source": "https://primis.phmsa.dot.gov/enforcement-data/Enforcement%20Data%20Dictionary.pdf",
+        "status": "verified"
+      }
+    },
+    "limitations": [
+      "Current-vintage extract as of 2026-11-03; historical records may have been revised after case closure, so this is retrospective research rather than a historical forecasting claim.",
+      "Right-censoring: cases not closed with a reduction within 36 months are coded zero, so later reductions are missed.",
+      "Closed cases with missing Assessed_Penalties are coded zero per the frozen task, not imputed.",
+      "Only NOPVs with positive proposed penalties are eligible; warning letters, notices of amendment, corrective action orders and compliance-only cases are excluded.",
+      "Cases cluster by operator and sometimes share an inspection; no operator history or lagged outcome features are used, and no corporate-hierarchy reconciliation is attempted.",
+      "The data dictionary is dated 2023 and uses some field names that differ from the 2026 raw header; construction follows raw header aliases and fails with observed headers if a required field is absent.",
+      "No full-row historical availability ledger exists; feature availability at historical notice dates is assumed from current field definitions and the dictionary.",
+      "No causal interpretation: inspection routes, regions and case initiation reflect PHMSA enforcement selection and legal process, not random assignment.",
+      "The U.S. public-domain basis is territorial; 17 U.S.C. 105 does not establish a worldwide dedication, and reuse outside the United States may depend on local law."
+    ],
+    "selection": {
+      "evidence": "Eligibility uses Case_Type, Proposed_Penalties and Notice_Sent_Date, all known at notice. Closed_Date and Assessed_Penalties are used only to define the target after the 36-month horizon.",
+      "kind": "prediction_time"
+    },
+    "training_label_timing": "unverified",
+    "use": "retrospective_research",
+    "vintage": {
+      "evidence": "Publisher labels the extract as data as of 11/03/2026.",
+      "kind": "current_snapshot"
+    }
+  },
+  "limitations": [
+    "Current-vintage retrospective extract as of 2026-11-03; historical fields may have been updated after case closure, so this does not prove the exact feature set was operationally available to an earlier decision-maker.",
+    "Right-censoring: cases not closed with a reduction within 36 months are coded 0, so later reductions are missed; closed cases with missing Assessed_Penalties are also coded 0 and may hide administrative eliminations recorded as blanks.",
+    "Selection: only NOPVs with positive proposed penalties are eligible; warning letters, notices of amendment, corrective action orders, and compliance-only cases are excluded.",
+    "Cases cluster by operator and sometimes share an inspection; no operator history or lagged outcome features are used, but evaluation should account for operator clustering.",
+    "The data dictionary is dated 2023 and uses some field names that differ from the 2026 raw header; construction must follow the raw header and map semantics explicitly.",
+    "No causal interpretation: inspection routes, regions, and case initiation reflect PHMSA enforcement selection and legal process, not random assignment.",
+    "The U.S. public-domain basis is territorial; 17 U.S.C. \u00a7 105 does not establish a worldwide dedication, and reuse outside the United States may depend on local law. No third-party photo or document rights are included.",
+    "Current-vintage extract as of 2026-11-03; historical records may have been revised after case closure, so this is retrospective research rather than a historical forecasting claim.",
+    "Right-censoring: cases not closed with a reduction within 36 months are coded zero, so later reductions are missed.",
+    "Closed cases with missing Assessed_Penalties are coded zero per the frozen task, not imputed.",
+    "Only NOPVs with positive proposed penalties are eligible; warning letters, notices of amendment, corrective action orders and compliance-only cases are excluded.",
+    "Cases cluster by operator and sometimes share an inspection; no operator history or lagged outcome features are used, and no corporate-hierarchy reconciliation is attempted.",
+    "The data dictionary is dated 2023 and uses some field names that differ from the 2026 raw header; construction follows raw header aliases and fails with observed headers if a required field is absent.",
+    "No full-row historical availability ledger exists; feature availability at historical notice dates is assumed from current field definitions and the dictionary.",
+    "No causal interpretation: inspection routes, regions and case initiation reflect PHMSA enforcement selection and legal process, not random assignment.",
+    "The U.S. public-domain basis is territorial; 17 U.S.C. 105 does not establish a worldwide dedication, and reuse outside the United States may depend on local law.",
+    "No uncertainty interval; observed differences do not establish universal headroom"
+  ],
+  "qualification": {
+    "gate_version": "1.6.1",
+    "ok": true
+  }
+}

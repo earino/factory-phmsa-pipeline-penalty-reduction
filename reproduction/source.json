@@ -1,0 +1,169 @@
+{
+  "construction": {
+    "access_recipe": "Download the publisher raw text file with source_io.fetch from https://primis.phmsa.dot.gov/enforcement-documents/PHMSA%20Pipeline%20Enforcement%20Raw%20Data.txt. The file is not pure UTF-8: decode the downloaded bytes with utf-8-sig first and fall back to cp1252 (then latin-1), recording the encoding that succeeded and asserting zero U+FFFD replacement characters. Parse the decoded text with pandas read_csv from an in-memory buffer using sep=chr(9), quotechar=chr(34), dtype=str, keep_default_na=False and engine='python'. Resolve raw header names case-insensitively with punctuation stripped; the current 53-field header carries CPF_Number (the operator case number, not CPF), WMS_Activity_Seq, Case_Type, Notice_Sent_Date, Proposed_Penalties, Assessed_Penalties, Closed_Date, Violation_Category, Cited_Regulations, Pipeline_Type, Region, How_Discovered? (question mark retained by the publisher), Notice_Actions and Proposed_Compliance_Order_Ind. Keep rows whose Case_Type denotes a Notice of Probable Violation, keep a present and strictly positive Proposed_Penalties, keep a parseable Notice_Sent_Date in 2002-01-01 through 2023-06-30, and deduplicate to the earliest notice per WMS_Activity_Seq. Count list tokens in Violation_Category and distinct tokens in Cited_Regulations. Assign penalty_reduced a value of one when Closed_Date is no later than 36 months after Notice_Sent_Date and Assessed_Penalties is present and strictly below Proposed_Penalties; otherwise use zero. Do not use Assessed_Penalties or Closed_Date as features.",
+    "expected_size": "Observed 1,977,064 characters and 53 columns in the current raw text file; estimated 3,000\u20135,000 total case rows from average row length, with the eligible NOPV-with-positive-proposed-penalty subset expected in the high hundreds to low thousands across 2002\u20132026.",
+    "format": "Tab-delimited UTF-8 text with a header row and quoted fields containing commas.",
+    "source_examples": "CPF 32026008NOPV: INTERSTATE LIQUID, Proposed_Penalties=228200, Assessed_Penalties=228200, Final_Order_Date=9/8/26. CPF 32026011NOPV: Proposed_Penalties=532030, Assessed_Penalties=207100, Consent_Order_Date=9/30/26. CPF 12026035NOPV: Proposed_Penalties=72200, Assessed_Penalties=59500, Closed_Date=9/9/26. CPF 52026007NOPV: Proposed_Penalties blank and Closed_Date=10/13/26, illustrating the positive-proposed-penalty filter."
+  },
+  "dataset_id": "phmsa-pipeline-penalty-reduction",
+  "evidence": [
+    {
+      "claim": "PHMSA offers a direct raw-data download for enforcement cases initiated since 2002 and labels its vintage.",
+      "quote": "Enforcement Cases Initiated from 2002 (data as of 11/03/2026)",
+      "url": "https://primis.phmsa.dot.gov/enforcement-data/"
+    },
+    {
+      "claim": "The actual download is a tab-delimited file whose header includes proposed, assessed, and collected penalty fields.",
+      "quote": "Proposed_Penalties\tAssessed_Penalties\tCollected_Penalties",
+      "url": "https://primis.phmsa.dot.gov/enforcement-documents/PHMSA%20Pipeline%20Enforcement%20Raw%20Data.txt"
+    },
+    {
+      "claim": "The data dictionary defines Proposed_Penalties as the proposed civil penalty amount.",
+      "quote": "Amounts of proposed civil penalties",
+      "url": "https://primis.phmsa.dot.gov/enforcement-data/Enforcement%20Data%20Dictionary.pdf"
+    },
+    {
+      "claim": "The data dictionary defines Assessed_Penalties as the assessed civil penalty amount.",
+      "quote": "Amounts of assessed Civil Penalties",
+      "url": "https://primis.phmsa.dot.gov/enforcement-data/Enforcement%20Data%20Dictionary.pdf"
+    },
+    {
+      "claim": "The data dictionary identifies the source of the extract as SMART and the Work Management System, PHMSA agency systems.",
+      "quote": "Source of data [SMART (Safety Monitoring and Reporting Tool) and WMS (Work Management System)]",
+      "url": "https://primis.phmsa.dot.gov/enforcement-data/Enforcement%20Data%20Dictionary.pdf"
+    },
+    {
+      "claim": "PHMSA's official DOT data-inventory record for its enforcement transparency data designates the license as Public Domain U.S. Government.",
+      "quote": "Public Domain U.S. Government",
+      "url": "https://data.transportation.gov/Pipelines-and-Hazmat/Pipeline-Enforcement-Transparency-Portal/m28n-9ah6/about_data"
+    },
+    {
+      "claim": "GAO confirms that PHMSA publishes its enforcement data under an open license and that the DOT data inventory states the license that applies to PHMSA's enforcement data.",
+      "quote": "PHMSA publishes data to the Enforcement Transparency website under an open license, which means that there are few to no restrictions on how the data can be used. The data inventory website published by DOT provides information on the license that applies to PHMSA's enforcement data.",
+      "url": "https://www.gao.gov/assets/d23105537.pdf"
+    },
+    {
+      "claim": "GAO confirms that PHMSA uploaded the raw enforcement data and its data dictionary to the Enforcement Transparency website, tying the raw file to the licensed enforcement dataset.",
+      "quote": "In 2023, GAO confirmed that PHMSA has uploaded the enforcement raw data (i.e., complete data) and the associated data dictionary to its Enforcement Transparency website.",
+      "url": "https://www.gao.gov/products/gao-23-105537"
+    },
+    {
+      "claim": "U.S. copyright protection is unavailable for works of the U.S. Government, the statutory public-domain basis for U.S. reuse.",
+      "quote": "Copyright protection under this title is not available for any work of the United States Government",
+      "url": "https://uscode.house.gov/us/usc/t17/s105/"
+    },
+    {
+      "claim": "The House Report accompanying section 105 states that the prohibition does not affect protection of U.S. Government works abroad, so the U.S. public-domain basis is territorial.",
+      "quote": "The prohibition on copyright protection for United States Government works is not intended to have any effect on protection of these works abroad. Works of the governments of most other countries are copyrighted.",
+      "url": "https://uscode.house.gov/us/usc/t17/s105/"
+    },
+    {
+      "claim": "Official U.S. guidance cautions that not everything on a federal website is a government work and that federal sites may include third-party protected material.",
+      "quote": "Not everything that appears on a federal government website is a government work. Government work is something created by a U.S. government officer or employee as part of their official duties. Content on federal websites may include protected intellectual property used with the right holder's permission.",
+      "url": "https://www.usa.gov/government-copyright"
+    },
+    {
+      "claim": "Official U.S. guidance confirms that U.S. Government works may be protected under foreign law, so no worldwide dedication is claimed.",
+      "quote": "U.S. copyright laws may not protect U.S. government works outside the country. But the work may be protected under the copyright laws of other jurisdictions when used in these jurisdictions. The U.S. government may assert copyright outside of the United States for U.S. government works.",
+      "url": "https://www.usa.gov/government-copyright"
+    },
+    {
+      "claim": "PHMSA documents that the case listing begins in 2002.",
+      "quote": "This report lists all of the enforcement cases initiated by PHMSA in a given year, beginning in 2002.",
+      "url": "https://primis.phmsa.dot.gov/enforcement-data/cases"
+    }
+  ],
+  "limitations": [
+    "Current-vintage retrospective extract as of 2026-11-03; historical fields may have been updated after case closure, so this does not prove the exact feature set was operationally available to an earlier decision-maker.",
+    "Right-censoring: cases not closed with a reduction within 36 months are coded 0, so later reductions are missed; closed cases with missing Assessed_Penalties are also coded 0 and may hide administrative eliminations recorded as blanks.",
+    "Selection: only NOPVs with positive proposed penalties are eligible; warning letters, notices of amendment, corrective action orders, and compliance-only cases are excluded.",
+    "Cases cluster by operator and sometimes share an inspection; no operator history or lagged outcome features are used, but evaluation should account for operator clustering.",
+    "The data dictionary is dated 2023 and uses some field names that differ from the 2026 raw header; construction must follow the raw header and map semantics explicitly.",
+    "No causal interpretation: inspection routes, regions, and case initiation reflect PHMSA enforcement selection and legal process, not random assignment.",
+    "The U.S. public-domain basis is territorial; 17 U.S.C. \u00a7 105 does not establish a worldwide dedication, and reuse outside the United States may depend on local law. No third-party photo or document rights are included."
+  ],
+  "reason": "PHMSA publishes a directly downloadable, documented tab-delimited extract of pipeline enforcement cases spanning 2002\u20132026, with a notice-stage proposed penalty and a later assessed-penalty outcome. This supports a clean binary prediction task with fixed chronological splits, no accounts, and no joins. PHMSA's public-information policy and 17 U.S.C. \u00a7 105 support U.S. redistribution, subject to explicit territorial limits.",
+  "source": {
+    "attribution": "None required",
+    "citation": "",
+    "documentation_url": "https://primis.phmsa.dot.gov/enforcement-data/Enforcement%20Data%20Dictionary.pdf",
+    "license": "Public Domain U.S. Government (PHMSA/DOT data-inventory designation for the Pipeline Enforcement Transparency Portal); U.S. Government work, 17 U.S.C. \u00a7 105",
+    "publisher": "U.S. Department of Transportation, Pipeline and Hazardous Materials Safety Administration (PHMSA)",
+    "redistribution": true,
+    "terms_excerpt": "Public Domain U.S. Government",
+    "terms_url": "https://data.transportation.gov/Pipelines-and-Hazmat/Pipeline-Enforcement-Transparency-Portal/m28n-9ah6/about_data",
+    "urls": [
+      "https://primis.phmsa.dot.gov/enforcement-documents/PHMSA%20Pipeline%20Enforcement%20Raw%20Data.txt",
+      "https://primis.phmsa.dot.gov/enforcement-data/"
+    ]
+  },
+  "task": {
+    "decision_user": "Pipeline operator regulatory-compliance counsel deciding whether to contest or negotiate the Notice of Probable Violation",
+    "features": [
+      {
+        "availability": "Recorded in Proposed_Penalties at Notice_Sent_Date; this is the notice-stage demand, not the final assessment. Current-vintage extract; historical availability assumed.",
+        "evidence_url": "https://primis.phmsa.dot.gov/enforcement-data/Enforcement%20Data%20Dictionary.pdf",
+        "meaning": "Proposed civil penalty in dollars stated in the Notice of Probable Violation.",
+        "name": "proposed_penalty_usd"
+      },
+      {
+        "availability": "Derived only from comma-separated categories present in Violation_Category at notice; blank remains missing.",
+        "evidence_url": "https://primis.phmsa.dot.gov/enforcement-data/Enforcement%20Data%20Dictionary.pdf",
+        "meaning": "Number of nonempty comma-separated violation categories in Violation_Category.",
+        "name": "violation_category_count"
+      },
+      {
+        "availability": "Derived only from regulations cited in Cited_Regulations at notice; blank remains missing.",
+        "evidence_url": "https://primis.phmsa.dot.gov/enforcement-data/Enforcement%20Data%20Dictionary.pdf",
+        "meaning": "Number of distinct nonempty regulation codes in Cited_Regulations.",
+        "name": "cited_regulation_count"
+      },
+      {
+        "availability": "Derived from whether Violation_Category contains Integrity Management at notice; blank remains missing.",
+        "evidence_url": "https://primis.phmsa.dot.gov/enforcement-data/Enforcement%20Data%20Dictionary.pdf",
+        "meaning": "Whether Violation_Category includes Integrity Management.",
+        "name": "integrity_management_flag"
+      },
+      {
+        "availability": "Recorded on the case at notice; current-vintage extract; historical availability assumed.",
+        "evidence_url": "https://primis.phmsa.dot.gov/enforcement-data/Enforcement%20Data%20Dictionary.pdf",
+        "meaning": "Pipeline segment type associated with the enforcement case, such as INTERSTATE LIQUID or INTERSTATE GAS TRANSMISSION.",
+        "name": "pipeline_type"
+      },
+      {
+        "availability": "Recorded on the case at notice; current-vintage extract; historical availability assumed.",
+        "evidence_url": "https://primis.phmsa.dot.gov/enforcement-data/Enforcement%20Data%20Dictionary.pdf",
+        "meaning": "PHMSA region that initiated the enforcement case.",
+        "name": "region"
+      },
+      {
+        "availability": "Recorded in How_Discovered at case opening and notice; current-vintage extract; historical availability assumed.",
+        "evidence_url": "https://primis.phmsa.dot.gov/enforcement-data/Enforcement%20Data%20Dictionary.pdf",
+        "meaning": "How the case was discovered, such as Integrated, Specialized, Failure Investigation, Construction, SRCR or PA Program.",
+        "name": "discovery_route"
+      },
+      {
+        "availability": "Recorded in Notice_Actions at notice; current-vintage extract; historical availability assumed.",
+        "evidence_url": "https://primis.phmsa.dot.gov/enforcement-data/Enforcement%20Data%20Dictionary.pdf",
+        "meaning": "Notice action codes such as CO, CP, CO/CP, WI or NOA.",
+        "name": "notice_actions"
+      },
+      {
+        "availability": "Recorded in Proposed_Compliance_Order_Ind at notice; blank or unknown remains missing rather than zero.",
+        "evidence_url": "https://primis.phmsa.dot.gov/enforcement-data/Enforcement%20Data%20Dictionary.pdf",
+        "meaning": "Whether a compliance order was proposed with the case.",
+        "name": "proposed_compliance_order"
+      }
+    ],
+    "outcome_horizon": "36 months after Notice_Sent_Date; holdout notices end 2023-06-30, so all outcomes are observable by 2026-06-30 against the 2026-11-03 extract",
+    "population": "NOPV cases with positive Proposed_Penalties and nonmissing Notice_Sent_Date from 2002-01-01 through 2023-06-30; deduplicated to earliest NOPV per WMS_Activity_Seq. Eligibility uses only decision-time information.",
+    "prediction_time": "Notice_Sent_Date, before the operator response, hearing or any order.",
+    "question": "Will a PHMSA Notice of Probable Violation with a proposed civil penalty be closed within 36 months with a lower assessed penalty than proposed?",
+    "simple_references": "Majority class; logistic regression using log(1 + proposed_penalty_usd) alone; calendar-year base rate. No persistence baseline is appropriate because cases are not a regularly sampled time series.",
+    "split_policy": "Fixed chronological boundaries by Notice_Sent_Date: train 2002-01-01 to 2016-12-31; evaluation 2017-01-01 to 2019-12-31; holdout 2020-01-01 to 2023-06-30. No embargo is needed because no lagged outcomes, rolling histories, operator histories, or future case records are used; related cases are deduplicated by WMS_Activity_Seq before splitting.",
+    "target": "y=1 iff the case has a nonmissing Closed_Date no later than 36 months after Notice_Sent_Date and Assessed_Penalties is nonmissing and strictly less than Proposed_Penalties (zero counts as elimination); otherwise y=0, including cases not closed with a reduction by 36 months. Closed cases with missing Assessed_Penalties are coded 0, not imputed.",
+    "usefulness": "The proposed demand is known at notice, but the final assessment is not; the task tests whether violation mix, enforcement channel, pipeline segment and proposed amount predict whether PHMSA demand is discounted. It is not a copied status field and supports contest-versus-negotiate triage."
+  },
+  "title": "Will PHMSA's proposed pipeline-safety civil penalty be reduced or eliminated within 36 months?",
+  "verdict": "ready"
+}

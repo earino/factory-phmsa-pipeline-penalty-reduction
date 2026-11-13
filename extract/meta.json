@@ -1,0 +1,48 @@
+{
+  "name": "phmsa-pipeline-penalty-reduction",
+  "description": "Will a PHMSA Notice of Probable Violation with a proposed civil penalty be closed within 36 months with a lower assessed penalty than proposed?",
+  "target": "penalty_reduced",
+  "positive_label": 1,
+  "id_columns": [
+    "case_id"
+  ],
+  "columns": [
+    "case_id",
+    "notice_date",
+    "proposed_penalty_usd",
+    "violation_category_count",
+    "cited_regulation_count",
+    "integrity_management_flag",
+    "pipeline_type",
+    "region",
+    "discovery_route",
+    "notice_actions",
+    "proposed_compliance_order",
+    "penalty_reduced"
+  ],
+  "rows": {
+    "train": 670,
+    "eval": 139,
+    "holdout": 149
+  },
+  "positive_rate": {
+    "train": 0.18358208955223881,
+    "eval": 0.2446043165467626,
+    "holdout": 0.3959731543624161
+  },
+  "split": {
+    "eval": {
+      "end": "2020-01-01T00:00:00.000",
+      "start": "2017-01-01T00:00:00.000"
+    },
+    "holdout": {
+      "end": "2023-07-01T00:00:00.000",
+      "start": "2020-01-01T00:00:00.000"
+    },
+    "train": {
+      "end": "2017-01-01T00:00:00.000",
+      "start": "2002-01-01T00:00:00.000"
+    }
+  },
+  "split_description": "Fixed chronological boundaries by Notice_Sent_Date: train 2002-01-01 to 2016-12-31; evaluation 2017-01-01 to 2019-12-31; holdout 2020-01-01 to 2023-06-30. No embargo is needed because no lagged outcomes, rolling histories, operator histories, or future case records are used; related cases are deduplicated by WMS_Activity_Seq before splitting."
+}

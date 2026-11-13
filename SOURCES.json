@@ -1,0 +1,23 @@
+{
+  "publisher-terms.snapshot": {
+    "url": "https://data.transportation.gov/Pipelines-and-Hazmat/Pipeline-Enforcement-Transparency-Portal/m28n-9ah6/about_data",
+    "bytes": 553558,
+    "sha256": "9fb1a68a63eb21a0d36aaefac6d7475947c6ea0d4b66df38889e761b90ab2139",
+    "retrieved_at_unix": 1794555636.7696302,
+    "transport_attempts": 1
+  },
+  "publisher-documentation.snapshot": {
+    "url": "https://primis.phmsa.dot.gov/enforcement-data/Enforcement%20Data%20Dictionary.pdf",
+    "bytes": 97231,
+    "sha256": "372b4a9e7a912e6af3f1846ba7311fee8ebf4286b05eebf47b89acca7534fcaf",
+    "retrieved_at_unix": 1794555637.799864,
+    "transport_attempts": 1
+  },
+  "phmsa_pipeline_enforcement_raw.txt": {
+    "url": "https://primis.phmsa.dot.gov/enforcement-documents/PHMSA%20Pipeline%20Enforcement%20Raw%20Data.txt",
+    "bytes": 1977064,
+    "sha256": "ac29ec425cc00e037d669e415c5e25c32f03ae7af28c5051d4e0d3f30e3a8992",
+    "retrieved_at_unix": 1794555640.0473206,
+    "transport_attempts": 1
+  }
+}
